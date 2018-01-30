@@ -1,0 +1,36 @@
+﻿@model CustomerViewModel
+
+<div class="row">
+    <h1>Customer Edit</h1>
+    <hr />
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.FirstName, new { @class = "" })
+                @Html.EditorFor(m => m.FirstName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FirstName)
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.LastName)
+                @Html.EditorFor(m => m.LastName)
+                @Html.ValidationMessageFor(m => m.LastName)
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <input class="btn btn-primary" type="submit" value="Save" />
+        </div>
+    </div>
+}

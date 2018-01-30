@@ -1,6 +1,6 @@
 using System;
 
-namespace AspNetCorePlayground.Web.Models
+namespace AspNetCorePlayground.Web.ViewModels
 {
     public class ErrorViewModel
     {
