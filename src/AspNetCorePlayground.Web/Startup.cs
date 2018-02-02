@@ -70,6 +70,7 @@ namespace AspNetCorePlayground.Web
             storeContext.Customers.AddRange(new[] {
                 new Core.Data.Customer
                 {
+                    CustomerId = 1,
                     CustomerStatusId = 1,
                     FirstName = "John",
                     LastName = "Doe",
@@ -77,6 +78,7 @@ namespace AspNetCorePlayground.Web
                 },
                 new Core.Data.Customer
                 {
+                    CustomerId = 2,
                     CustomerStatusId = 1,
                     FirstName = "Jane",
                     LastName = "Doe",
@@ -84,6 +86,7 @@ namespace AspNetCorePlayground.Web
                 },
                 new Core.Data.Customer
                 {
+                    CustomerId = 3,
                     CustomerStatusId = 1,
                     FirstName = "Bob",
                     LastName = "Thomas",
@@ -91,6 +94,7 @@ namespace AspNetCorePlayground.Web
                 },
                 new Core.Data.Customer
                 {
+                    CustomerId = 4,
                     CustomerStatusId = 1,
                     FirstName = "William",
                     LastName = "Wallace",
@@ -98,6 +102,7 @@ namespace AspNetCorePlayground.Web
                 },
                 new Core.Data.Customer
                 {
+                    CustomerId = 5,
                     CustomerStatusId = 2,
                     FirstName = "Andrew",
                     LastName = "Willis",

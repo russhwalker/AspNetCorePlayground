@@ -24,6 +24,22 @@ namespace AspNetCorePlayground.Web.Controllers
             return View(viewModel);
         }
 
+        public IActionResult EditMany()
+        {
+            var customers = this.customerRepository.GetCustomers();
+            var viewModel = new CustomersViewModel
+            {
+                Customers = customers.Select(c => new CustomerViewModel
+                {
+                    CustomerId = c.CustomerId,
+                    CustomerStatusId = c.CustomerStatusId,
+                    FirstName = c.FirstName,
+                    LastName = c.LastName,
+                }).ToList()
+            };
+            return View(viewModel);
+        }
+
         public IActionResult Edit(int id = 0)
         {
             var customer = id == 0 ? new Core.Data.Customer

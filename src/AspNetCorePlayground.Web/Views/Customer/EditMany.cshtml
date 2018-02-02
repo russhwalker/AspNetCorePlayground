@@ -1,0 +1,17 @@
+﻿@model CustomersViewModel
+
+<div class="row">
+    <h1>Customer Edit</h1>
+    <hr />
+</div>
+
+
+<h4>_EditMVCHtmlHelpers.cshtml</h4>
+@Html.Partial("_EditMVCHtmlHelpers", Model.Customers[0])
+<hr />
+<h4>_EditMVCTagHelpers.cshtml</h4>
+@Html.Partial("_EditMVCTagHelpers", Model.Customers[1])
+<hr />
+<h4>_EditCustomTagHelpers.cshtml</h4>
+@Html.Partial("_EditCustomTagHelpers", Model.Customers[1])
+<hr />
