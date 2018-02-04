@@ -21,6 +21,8 @@ namespace AspNetCorePlayground.Web.TagHelpers
 
         public CustomerViewModel Customer { get; set; }
 
+        public string LabelText { get; set; }
+
         [HtmlAttributeName("customer-for")]
         public ModelExpression For { get; set; }
 
@@ -32,19 +34,31 @@ namespace AspNetCorePlayground.Web.TagHelpers
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            //output.TagName = "div";
-            //output.Content.SetHtmlContent("<strong>test</strong>");
-            
+            var label = Generator.GenerateLabel(
+                ViewContext,
+                For.ModelExplorer,
+                For.Name,
+                LabelText,
+                null);
+            output.Content.AppendHtml(label);
 
-            var tag = Generator.GenerateTextBox(
+            var input = Generator.GenerateTextBox(
                 ViewContext,
                 For.ModelExplorer,
                 For.Name,
                 For.ModelExplorer.Model,
                 string.Empty,
-                null);            
+                new { @class = "form-control" });
+            output.Content.AppendHtml(input);
 
-            output.Content.SetHtmlContent(tag.InnerHtml);
+            var validation = Generator.GenerateValidationMessage(
+                ViewContext,
+                For.ModelExplorer,
+                For.Name,
+                string.Empty,
+                "span",
+                new { @class = "text-danger" });
+            output.Content.AppendHtml(validation);
         }
 
     }

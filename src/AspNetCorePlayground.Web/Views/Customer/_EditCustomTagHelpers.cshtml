@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <customer-input customer="Model" customer-for="FirstName"></customer-input>
+                <customer-input customer="Model" customer-for="FirstName" label-text="First Name"></customer-input>
             </div>
         </div>
     </div>
@@ -13,9 +13,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <label asp-for="LastName">Last Name</label>
-                <input asp-for="LastName" type="text" class="form-control" />
-                <span asp-validation-for="LastName" class="text-danger"></span>
+                <customer-input customer="Model" customer-for="LastName" label-text="Last Name"></customer-input>
             </div>
         </div>
     </div>
