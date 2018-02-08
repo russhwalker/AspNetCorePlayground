@@ -16,14 +16,6 @@ namespace AspNetCorePlayground.Web.Controllers
             this.customerRepository = customerRepository;
         }
 
-        public IActionResult Index()
-        {
-            var viewModel = new CustomersViewModel
-            {
-            };
-            return View(viewModel);
-        }
-
         public IActionResult EditMany()
         {
             var customers = this.customerRepository.GetCustomers();
