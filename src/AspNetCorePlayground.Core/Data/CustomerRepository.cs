@@ -26,7 +26,7 @@ namespace AspNetCorePlayground.Core.Data
 
         public Customer GetCustomer(int id)
         {
-            return this.storeContext.Customers.Single(c => c.CustomerId == id);
+            return this.storeContext.Customers.SingleOrDefault(c => c.CustomerId == id);
         }
 
         public Customer SaveCustomer(Customer customer)

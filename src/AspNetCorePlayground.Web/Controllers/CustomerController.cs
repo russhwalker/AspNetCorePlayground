@@ -34,11 +34,10 @@ namespace AspNetCorePlayground.Web.Controllers
 
         public IActionResult Edit(int id = 0)
         {
-            var customer = id == 0 ? new Core.Data.Customer
+            var customer = this.customerRepository.GetCustomer(id) ?? new Core.Data.Customer
             {
                 CustomerId = 0
-            }
-            : this.customerRepository.GetCustomer(id);
+            };
             var viewModel = new CustomerViewModel
             {
                 CustomerId = customer.CustomerId,

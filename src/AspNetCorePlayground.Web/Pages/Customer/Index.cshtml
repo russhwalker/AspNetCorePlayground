@@ -1,9 +1,16 @@
 ﻿@page
-@model AspNetCorePlayground.Web.ViewModels.CustomerIndexViewModel
-@{
-}
+@using AspNetCorePlayground.Web.Views.Customer
+@model IndexModel
 
 <div class="row">
-    <h1>Customer/Index</h1>
-    <hr />
+    <div class="col-md-12">
+        <h1>Customer/Index</h1>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        Customer Count: @Model.CustomerCount
+    </div>
 </div>
