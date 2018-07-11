@@ -1,0 +1,24 @@
+﻿@model CustomersViewModel
+
+<div class="row">
+    <h1>Customers</h1>
+    <hr />
+</div>
+
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model.Customers)
+        {
+        <tr>
+            <td><a asp-action="Edit" asp-controller="Customer" asp-route-id="@customer.CustomerId"> @($"{customer.LastName}, {customer.FirstName}")</a></td>
+            <td>@(customer.CustomerStatuses.Single(s => s.Key == customer.CustomerStatusId).Value)</td>
+        </tr>
+        }
+    </tbody>
+</table>

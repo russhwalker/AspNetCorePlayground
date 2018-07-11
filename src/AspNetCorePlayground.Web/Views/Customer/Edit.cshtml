@@ -1,0 +1,44 @@
+﻿@model CustomerViewModel
+
+<div class="row">
+    <h1>Customer Edit</h1>
+    <hr />
+</div>
+
+<form asp-controller="customer" asp-action="Edit" method="post">
+    <input asp-for="CustomerId" type="hidden" />
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="FirstName">First Name</label>
+                <input asp-for="FirstName" type="text" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <edit-input model-for="LastName" label-text="Last Name"></edit-input>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="CustomerStatusId">Status</label>
+                <select asp-for="CustomerStatusId" asp-items="Model.CustomerStatusSelectList" class="form-control"></select>
+                <span asp-validation-for="CustomerStatusId" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <input class="btn btn-primary" type="submit" value="Save" />
+        </div>
+    </div>
+</form>
